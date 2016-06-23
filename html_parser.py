@@ -3,12 +3,12 @@ from bs4 import BeautifulSoup
 
 class HtmlParser(object):
 
-    def parse_pages_urls(self,response):
+    def parse_pages_urls(self,response,root_url):
         soup = BeautifulSoup(response)
         urls = []
         pages = int(soup.find("a",{"class":"next"}).previous_sibling.get_text())
         for i in range(pages):
-            urls.append(url + '#page=' + str(i))
+            urls.append(root_url + '#page=' + str(i))
         # like ['http://app.mi.com/category/5#page=7']
         return urls
 

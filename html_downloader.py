@@ -12,8 +12,8 @@ class Downloader(object):
 		driver = webdriver.Firefox()
 		driver.get(root_url)
 		response = driver.page_source
-        driver.quit()
-        return response
+		driver.quit()
+		return response
 
 	def download(self,url):
 		response = requests.get(url)
