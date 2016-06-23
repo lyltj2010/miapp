@@ -10,7 +10,7 @@ class JsonOutputer(object):
 			return
 		self.data.append(data)
 
-	def output_json(self,name='app.json'):
+	def output_json(self,name):
 		with open(name,'w') as fout:
 			json.dump(self.data, fout)
 
