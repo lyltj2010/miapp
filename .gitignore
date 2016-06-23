@@ -1,3 +1,4 @@
 .ipynb_checkpoints/
 *.ipynb
-*.app.json
+*.json
+*.pyc
