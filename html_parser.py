@@ -3,10 +3,25 @@ from bs4 import BeautifulSoup
 
 class HtmlParser(object):
 
-    def parse_urls(self,response):
-        pass
+    def parse_pages_urls(self,response):
+        soup = BeautifulSoup(response)
+        urls = []
+        pages = int(soup.find("a",{"class":"next"}).previous_sibling.get_text())
+        for i in range(pages):
+            urls.append(url + '#page=' + str(i))
+        # like ['http://app.mi.com/category/5#page=7']
+        return urls
 
-    
+    def parse_applist_urls(self,response):
+        soup = BeautifulSoup(response.text)
+        a = soup.find("ul",{"id":"all-applist"}).children
+        urls = []
+        for li in a:
+            urls.append('http://app.mi.com' + li.a['href'])
+        # like ['http://app.mi.com/detail/125493']
+        return urls
+
+
 
     def parse_app_details(self,response):
         # how to handle exception?
@@ -33,5 +48,5 @@ class HtmlParser(object):
 
         item["root"] = soup.find("ul",{"class":"second-ul"}).get_text()
         item["url"] = response.url
-
+        # return dict for dumping into json file
         return item
