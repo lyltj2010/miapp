@@ -11,9 +11,9 @@ class HomeSpider(scrapy.Spider):
     allowed_domains = ["mi.com"]
     start_urls = ["http://app.mi.com/"]
 
-    def start_requests(self):
-        for url in self.start_urls:
-            yield SplashRequest(url,self.parse,args={'wait':0.1,'html':1,})
+    # def start_requests(self):
+    #     for url in self.start_urls:
+    #         yield SplashRequest(url,self.parse,args={'wait':0.1,'html':1,})
 
     def parse(self,response):
         # Start from start_urls
@@ -21,15 +21,15 @@ class HomeSpider(scrapy.Spider):
         hrefs = response.xpath('//ul[@class="category-list"]/li/a/@href') #[0:1]        
         for href in hrefs:
             url = response.urljoin(href.extract()) # + "#page=" + '0'
-            # yield scrapy.Request(url,callback=self.parse_cat_app)
-            yield SplashRequest(url,self.parse_cat_app,args={'wait':0.1,'html':1,})
+            yield scrapy.Request(url,callback=self.parse_cat_app)
+            # yield SplashRequest(url,self.parse_cat_app,args={'wait':0.1,'html':1,})
 
     def parse_cat_app(self,response):
         hrefs = response.xpath('//ul[@id="all-applist"]/li/h5/a/@href') #[0:3]
         for href in hrefs:
             url = response.urljoin(href.extract())
-            # yield scrapy.Request(url,callback=self.parse_app_details)
-            yield SplashRequest(url,callback=self.parse_app_details,args={'wait':0.1,'html':1,})
+            yield scrapy.Request(url,callback=self.parse_app_details)
+            # yield SplashRequest(url,callback=self.parse_app_details,args={'wait':0.1,'html':1,})
 
         # cat_url = response.url # like http://app.mi.com/category/5#page=66
         # next_page_num = int(re.findall('\d+',cat_url)[-1]) + 1 # like 66

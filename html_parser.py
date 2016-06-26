@@ -27,7 +27,7 @@ class HtmlParser(object):
         return urls
 
     def parse_applist_urls(self,response):
-        soup = BeautifulSoup(response.text)
+        soup = BeautifulSoup(response)
         a = soup.find("ul",{"id":"all-applist"}).children
         urls = []
         for li in a:

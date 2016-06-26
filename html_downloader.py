@@ -9,7 +9,8 @@ class Downloader(object):
 	"""
 	def download_js(self,url):
 		# for javascript rendered pages
-		driver = webdriver.Firefox()
+		# driver = webdriver.Firefox()
+		driver = webdriver.PhantomJS()
 		driver.get(url)
 		response = driver.page_source
 		driver.quit()
