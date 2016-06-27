@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} Yongle {% endblock %}
+
+{% block navbar %}
+<div class="navbar" role='navigation'>
+	<div class="container">
+		<div class="navbar-header">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">资料</a>
+				</li>
+				<li class="disabled">
+					<a href="#">信息</a>
+				</li>
+			</ul>	
+		</div>			
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<h1>Hello Yongle</h1>
+	</div>
+{% endblock %}
+
+<!-- <img src="{{url_for('static',filename='img/avatar.jpeg')}}"> -->
