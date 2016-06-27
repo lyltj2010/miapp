@@ -1,6 +1,7 @@
 .ipynb_checkpoints/
 *.ipynb
 *.json
+*.csv
 *.pyc
 data/
 site/
