@@ -1,0 +1,37 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} MiApp {% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-default navbar-static-top" style="margin-bottom:0px">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand">MiApp</a>
+		</div>
+
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">首页</a></li>
+				<li><a href="#">数据抓取</a></li>
+				<li><a href="#">精品推荐</a></li>
+				<li><a href="#">数据分析</a></li>
+				<li><a href="#">关于</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+	{% block page_content %}
+	{% endblock %}
+
+	{% block footer %}
+		<div class="container">
+			<footer>
+				<hr>
+				<p>© 2016 Yongle Lyu</p>
+			</footer>
+		</div>	
+	{% endblock %} <!-- end of footer -->
+
+{% endblock %}

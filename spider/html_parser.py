@@ -61,6 +61,7 @@ class HtmlParser(object):
                 item["updated_at"] = li.get_text()
 
         item["root"] = soup.find("ul",{"class":"second-ul"}).get_text()
+        item["detail"] = soup.find("p",{"class":"pslide"}).get_text()
         item["url"] = response.url
         # return dict for dumping into json file
         return item

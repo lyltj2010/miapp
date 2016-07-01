@@ -16,7 +16,7 @@ class SpiderMain(object):
         cats_cont = self.downloader.download(root_url)
         cats_urls = self.parser.parse_cats_urls(cats_cont)
         count = 0
-        for cat_url in cats_urls[19:]: # use slice like [:3] to craw at different time!
+        for cat_url in cats_urls: # use slice like [:3] to craw at different time!
             print "Start Crawing category %s." % cat_url
             try: 
                 pages_cont = self.downloader.download_js(cat_url)
