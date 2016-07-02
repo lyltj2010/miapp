@@ -13,9 +13,17 @@ def index():
 def spider():
 	return render_template('spider.html')
 
+@app.route('/recommendation')
+def recommendation():
+	return render_template('recommendation.html')
+
 @app.route('/analysis')
 def analysis():
 	return render_template('analysis.html')
+
+@app.route('/about')
+def about():
+	return render_template('about.html')
 
 if __name__ == "__main__":
 	app.run(debug=True)

@@ -2,7 +2,7 @@
 {% block title %} MiApp {% endblock %}
 
 {% block navbar %}
-<div class="navbar navbar-default navbar-static-top" style="margin-bottom:0px">
+<div class="navbar navbar-default navbar-static-top" style="margin-bottom:1px">
 	<div class="container">
 		<div class="navbar-header">
 			<a class="navbar-brand">MiApp</a>
@@ -10,11 +10,11 @@
 
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">首页</a></li>
-				<li><a href="#">数据抓取</a></li>
-				<li><a href="#">精品推荐</a></li>
-				<li><a href="#">数据分析</a></li>
-				<li><a href="#">关于</a></li>
+				<li class="active"><a href="{{url_for('index')}}">首页</a></li>
+				<li><a href="{{url_for('spider')}}">数据抓取</a></li>
+				<li><a href="{{url_for('recommendation')}}">精品推荐</a></li>
+				<li><a href="{{url_for('analysis')}}">数据分析</a></li>
+				<li><a href="{{url_for('about')}}">关于</a></li>
 			</ul>
 		</div>
 	</div>
