@@ -3,6 +3,53 @@
 
 {% block page_content %}
 <div class="container">
+	<div>
+		<h2>热图</h2>
+		<p>
+			不同的类别，根据其更新的时间，我们可以查看其发布更新的密度，绘制heatmap，密度较大的类别的app市场比较活跃，如果做app开发，可以一眼看出哪里机会大！
+			<br>
+			<br>
+
+			<b>共有如下类型的App:</b>
+			<br>
+			影音视听,娱乐消遣,效率办公,医疗健康,金融理财,聊天社交,学习教育,新闻资讯,实用工具,网游RPG,时尚购物,儿童益智,休闲创意,旅行交通,居家生活,赛车体育,图书阅读,动作枪战,摄影摄像,跑酷闯关,模拟经营,体育运动,飞行空战,棋牌桌游,战争策略,格斗快打,塔防迷宫.
+			<br>
+			<br>
+			可以看出金融，医疗等类别的App市场更新密度很大，市场也比较大。换不同的参数，可以查看不同类别App的heatmap，具体见<a href="https://github.com/lyltj2010/miapp/blob/master/app.ipynb">NoteBook</a>.
+		</p>	
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h4>所有应用</h4>
+			<img src="{{url_for('static',filename='img/heatmap1.png')}}">
+		</div>
+		<div class="col-md-6">
+			<h4>金融理财</h4>
+			<img src="{{url_for('static',filename='img/heatmap2.png')}}">
+		</div>
+		<div class="col-md-6">
+			<h4>医疗健康</h4>
+			<img src="{{url_for('static',filename='img/heatmap3.png')}}">
+		</div>
+		<div class="col-md-6">
+			<h4>棋牌桌游</h4>
+			<img src="{{url_for('static',filename='img/heatmap4.png')}}">
+		</div>
+	</div>
+	<div>
+		<h2>Word Cloud</h2>
+		<p>
+			每个App有对应的描述，这里把所有App描述的词语统计出来，把高频词汇用Word Cloud图
+			展示出来，这样可以很直观的看到哪些方面是目前比较火的，App、功能、需求等。简单的代码实现细节参考<a href="https://github.com/lyltj2010/miapp/blob/master/app.ipynb" target="_blank">NoteBook</a>
+		</p>
+		<br>
+		<span><b>Word Cloud可视化</b></span>
+		<div class="row">
+			<div class="col-md-12">
+				<img class="img-responsive center-block" src="{{url_for('static',filename='img/word_cloud.png')}}">
+			</div><br><br>	
+		</div>
+	</div>
 
 </div>
 

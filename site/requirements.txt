@@ -1,0 +1,11 @@
+Flask==0.11
+Flask-Bootstrap==3.3.6.0
+Jinja2==2.8
+Werkzeug==0.11.10
+virtualenv==15.0.1
+virtualenv-clone==0.2.6
+virtualenvwrapper==4.7.1
+requests==2.9.1
+pyOpenSSL==16.0.0
+gunicorn==19.6.0
+html5lib==0.9

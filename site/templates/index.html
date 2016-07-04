@@ -5,12 +5,12 @@
 {% block page_content%}
 <div class="jumbotron">
 	<div class="container">
-		<h1>Hello!</h1>
+		<h2>Hello!</h2>
 		<p>
-			This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+			这是一个App市场的数据研究与可视化的mini项目，从小米应用商城获取所以App信息数据，用Python做一下简单的分析，然后用flask简单呈现在这里，总共三步，下面是简单的介绍。
 		</p>
 		<p>
-			<a class="btn btn-primary btm-lg", href="#" role='button'>Learn More »</a>
+			<a class="btn btn-default btm-md", href="https://github.com/lyltj2010/miapp" role='button' target="_blank">Learn More »</a>
 		</p>
 	</div>
 </div> <!-- end of jumbotron -->
@@ -18,26 +18,32 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+			<h3>数据获取</h3>
 			<p>
-				<a class="btn btn-default" href="#" role="button">View details »</a>
+				用requests和beautifulsoup抓取小米商城所以App的细节数据。
+			</p>
+			<p>
+				<a class="btn btn-default" href="{{url_for('spider')}}" role="button">View details »</a>
 			</p>
 		</div>
 
 		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+			<h3>数据分析</h3>
 			<p>
-				<a class="btn btn-default" href="#" role="button">View details »</a>
+				对获取的数据做清理，运用pandas, sklearn, matplotlib等库做简单的分析与可视化。
+			</p>
+			<p>
+				<a class="btn btn-default" href="{{url_for('analysis')}}" role="button">View details »</a>
 			</p>
 		</div>
 
 		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+			<h3>结果展示</h3>
 			<p>
-				<a class="btn btn-default" href="#" role="button">View details »</a>
+				将分析结果简单地用ipython notebook和静态网页呈现，同时部署在Pass平台上。
+			</p>
+			<p>
+				<a class="btn btn-default" href="{{url_for('index')}}" role="button">View details »</a>
 			</p>
 		</div>
 	</div>
