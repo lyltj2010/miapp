@@ -1,6 +1,4 @@
 .ipynb_checkpoints/
 *.json
-*.csv
 *.pyc
-data/
 plan.md
